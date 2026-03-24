@@ -15,7 +15,7 @@ export function SiteHeader() {
           href="/"
           className="font-display min-w-0 shrink text-sm font-bold tracking-tight text-text sm:text-base"
         >
-          Fitness Funnel
+          Dr. Desporte
         </Link>
         <nav className="flex flex-wrap items-center justify-end gap-1.5 sm:gap-2">
           <Link

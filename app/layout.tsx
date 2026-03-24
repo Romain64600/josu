@@ -16,8 +16,8 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "Fitness Funnel",
-  description: "Embudo de ventas fitness — vista previa local"
+  title: "Dr. Desporte",
+  description: "Programa de forma física — Dr. Desporte"
 };
 
 export default function RootLayout({

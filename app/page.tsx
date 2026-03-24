@@ -265,7 +265,7 @@ export default function HomePage() {
 
       <footer className="border-t border-text/8 bg-bg py-10 text-center">
         <p className="text-xs font-medium uppercase tracking-widest text-muted">
-          Fitness Funnel · demo local
+          Dr. Desporte · demo local
         </p>
       </footer>
     </div>
