@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { LeadForm } from "@/components/LeadForm";
+import { SiteHeader } from "@/components/SiteHeader";
 
 export default function HomePage() {
   return (
@@ -8,20 +10,7 @@ export default function HomePage() {
         aria-hidden
       />
 
-      <header className="fixed left-0 right-0 top-0 z-50 flex justify-center px-4 pt-5 sm:pt-6">
-        <div className="flex w-full max-w-4xl items-center justify-between gap-4 rounded-full border border-text/8 bg-surface/75 px-5 py-3 shadow-card backdrop-blur-xl sm:px-7">
-          <span className="font-display text-sm font-bold tracking-tight text-text sm:text-base">
-            Fitness Funnel
-          </span>
-          <a
-            href="#registro"
-            className="group relative inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2 text-xs font-semibold text-white shadow-glow transition hover:bg-text sm:text-sm"
-          >
-            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-cta/0 via-cta/25 to-cta/0 opacity-0 transition group-hover:opacity-100" />
-            <span className="relative">Registrarse</span>
-          </a>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main>
         <section className="relative px-6 pb-24 pt-32 sm:pb-32 sm:pt-40">
@@ -31,62 +20,76 @@ export default function HomePage() {
           />
           <div className="relative mx-auto max-w-6xl">
             <div className="mx-auto max-w-4xl text-center">
-              <p
-                className="inline-flex items-center gap-2 rounded-full border border-text/10 bg-surface/60 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-muted backdrop-blur-sm sm:text-xs"
-                style={{ animationDelay: "0.05s" }}
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-cta shadow-[0_0_8px_rgba(255,77,0,0.8)]" />
-                Programa · 12 semanas
-              </p>
-              <h1 className="font-display mt-8 text-balance text-[2.35rem] font-extrabold leading-[1.05] tracking-tight text-text sm:text-6xl sm:leading-[1.02] lg:text-7xl">
-                Recupera tu{" "}
-                <span className="relative whitespace-nowrap">
-                  <span className="relative z-10">forma física</span>
+              <h1 className="font-display text-balance text-[2.15rem] font-extrabold leading-[1.08] tracking-tight text-text sm:text-5xl sm:leading-[1.05] lg:text-6xl">
+                Recupera tu forma física{" "}
+                <span className="relative inline-block">
+                  <span className="relative z-10">sin renunciar</span>
                   <span
-                    className="absolute -bottom-1 left-0 right-0 h-3 bg-cta/25 sm:h-4"
+                    className="absolute bottom-0.5 left-0 right-0 h-[3px] rounded-full bg-cta/45 sm:bottom-1 sm:h-1"
                     aria-hidden
                   />
-                </span>
-                <br className="hidden sm:block" />
-                <span className="text-muted sm:text-text"> sin renunciar a tu vida.</span>
+                </span>{" "}
+                a tu vida.
               </h1>
               <p className="mx-auto mt-8 max-w-2xl text-pretty text-base leading-relaxed text-muted sm:text-lg">
                 Método progresivo, vídeos cortos y seguimiento claro. Pensado para
                 profesionales que buscan resultados duraderos — no otra dieta
                 extrema que abandones a la tercera semana.
               </p>
-              <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">
+
+              <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:mt-12 sm:flex-row sm:gap-5">
                 <a
                   href="#registro"
-                  className="inline-flex h-14 w-full items-center justify-center rounded-full bg-cta px-10 text-sm font-bold text-white shadow-glow transition hover:bg-cta-hover hover:shadow-card-lg sm:w-auto sm:text-base"
+                  className="inline-flex h-14 w-full items-center justify-center rounded-full bg-cta px-10 text-sm font-bold text-white shadow-md transition hover:bg-cta-hover sm:w-auto sm:text-base"
                 >
                   Recibir el programa
                 </a>
                 <a
                   href="#oferta"
-                  className="inline-flex h-14 w-full items-center justify-center rounded-full border-2 border-text/12 bg-surface/80 px-10 text-sm font-bold text-text backdrop-blur-sm transition hover:border-text/25 hover:bg-surface sm:w-auto sm:text-base"
+                  className="inline-flex h-14 w-full items-center justify-center rounded-full border border-text/10 bg-white px-10 text-sm font-bold text-text shadow-sm transition hover:border-text/20 sm:w-auto sm:text-base"
                 >
                   Ver ofertas
                 </a>
               </div>
-            </div>
 
-            <div className="relative mx-auto mt-20 max-w-4xl">
               <div
-                className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-cta/20 via-transparent to-text/5 blur-2xl sm:-inset-8 sm:rounded-[2.5rem]"
-                aria-hidden
-              />
-              <div className="relative aspect-video overflow-hidden rounded-3xl border border-text/10 bg-ink shadow-card-lg ring-1 ring-white/10 sm:rounded-[2rem]">
-                <video
-                  className="h-full w-full object-contain"
-                  controls
-                  playsInline
-                  preload="metadata"
-                  aria-label="Vídeo de presentación del programa"
-                >
-                  <source src="/videos/fitness-funnel.mp4" type="video/mp4" />
-                  Tu navegador no admite reproducción de vídeo HTML5.
-                </video>
+                id="video"
+                className="relative mx-auto mt-14 w-full max-w-4xl scroll-mt-32 sm:mt-16"
+              >
+                <h2 className="font-display text-center text-base font-bold text-text sm:text-lg">
+                  Vídeo de presentación
+                </h2>
+                <p className="mx-auto mt-2 max-w-md text-center text-xs text-muted sm:text-sm">
+                  Pulsa play para ver el método explicado en pocos minutos.
+                </p>
+                <div className="relative mx-auto mt-6 max-w-full sm:mt-8">
+                  <div
+                    className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-cta/15 via-transparent to-transparent blur-2xl sm:-inset-8"
+                    aria-hidden
+                  />
+                  <div className="relative aspect-video overflow-hidden rounded-3xl border border-text/10 bg-ink shadow-card-lg ring-1 ring-black/5 sm:rounded-[2rem]">
+                    <video
+                      className="h-full w-full object-contain"
+                      controls
+                      playsInline
+                      preload="auto"
+                      aria-label="Vídeo de presentación del programa"
+                    >
+                      <source src="/videos/fitness-funnel.mp4" type="video/mp4" />
+                      Tu navegador no admite reproducción de vídeo HTML5.
+                    </video>
+                  </div>
+                </div>
+                <p className="mx-auto mt-6 max-w-lg text-center text-xs leading-relaxed text-muted sm:text-sm">
+                  ¿Mucho peso o casi sin moverte? Hay una{" "}
+                  <Link
+                    href="/preparacion"
+                    className="font-semibold text-cta underline decoration-cta/30 underline-offset-2 hover:decoration-cta"
+                  >
+                    preparación gratuita, muy suave
+                  </Link>{" "}
+                  antes del nivel principiante.
+                </p>
               </div>
             </div>
           </div>
