@@ -1,18 +1,5 @@
 import { LeadForm } from "@/components/LeadForm";
 
-function PlayIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden
-    >
-      <path d="M8 5v14l11-7L8 5z" />
-    </svg>
-  );
-}
-
 export default function HomePage() {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
@@ -89,16 +76,17 @@ export default function HomePage() {
                 className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-cta/20 via-transparent to-text/5 blur-2xl sm:-inset-8 sm:rounded-[2.5rem]"
                 aria-hidden
               />
-              <div className="relative overflow-hidden rounded-3xl border border-text/10 bg-ink shadow-card-lg ring-1 ring-white/10 sm:rounded-[2rem]">
-                <div className="aspect-video flex flex-col items-center justify-center gap-5 bg-gradient-to-br from-text via-ink to-text px-8 py-12">
-                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur-md transition hover:scale-105 hover:bg-white/15">
-                    <PlayIcon className="ml-1 h-9 w-9" />
-                  </div>
-                  <p className="max-w-sm text-center text-sm leading-relaxed text-white/55">
-                    VSL · Integra aquí tu iframe de YouTube o reproductor
-                    embebido para la presentación del método.
-                  </p>
-                </div>
+              <div className="relative aspect-video overflow-hidden rounded-3xl border border-text/10 bg-ink shadow-card-lg ring-1 ring-white/10 sm:rounded-[2rem]">
+                <video
+                  className="h-full w-full object-contain"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  aria-label="Vídeo de presentación del programa"
+                >
+                  <source src="/videos/fitness-funnel.mp4" type="video/mp4" />
+                  Tu navegador no admite reproducción de vídeo HTML5.
+                </video>
               </div>
             </div>
           </div>
